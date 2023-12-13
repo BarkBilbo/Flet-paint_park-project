@@ -23,8 +23,8 @@ df
 
 
 df1 = df.iloc[:,:2].T.reset_index()
-df2 = df.iloc[:,2:4].T.reset_index()
-df3 = df.iloc[:,4:6].T.reset_index()
+df2 = df.iloc[:,3:5].T.reset_index()
+df3 = df.iloc[:,6:8].T.reset_index()
 df1
 
 
