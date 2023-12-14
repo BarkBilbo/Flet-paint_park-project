@@ -1,4 +1,10 @@
+
+
+
+###################### 엑셀파일의 위 아래 row column 잘라버리기 ###################################
+
 # pip install pandas openpyxl
+
 
 import pandas as pd
 
