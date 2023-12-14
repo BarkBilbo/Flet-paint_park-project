@@ -1,3 +1,5 @@
+import pandas as pd
+
 
 # 엑셀 파일 경로 
 excel_file_path = 'excel_edit.xlsx'
