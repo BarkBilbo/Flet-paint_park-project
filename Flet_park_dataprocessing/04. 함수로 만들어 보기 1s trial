@@ -39,6 +39,14 @@ def process_excel_file(excel_file_path):
 
         dict1, dict2, dict3, dict4, dict5, dict6, dict7, dict8, dict9 = {}, {}, {}, {}, {}, {}, {}, {}, {}
         dict1["이물"] = ["이물질", "이물"]
+        dict2["이색"] = ["이색"]
+        dict3["얼룩"] = ["얼룩"]
+        dict4["핀홀"] = ["핀홀", "핀 홀"]
+        dict5["칠부족"] = ["칠부족", "칠 부족"]
+        dict6["칠튐"] = ["칠튐", "칠 튐"]
+        dict7["전착불량"] = ["전착", "전착흐름", "전착 흐름"]
+        dict8["실러불량"] = ["실러", "실라", "실링", "실러불량", "실라불량", "실링불량", "실리콘"]
+        dict9["폴리싱자국"] = ["광택", "폴리싱"]        
         # ... (add other dictionaries)
 
         dict_collect_list = [dict1, dict2, dict3, dict4, dict5, dict6, dict7, dict8, dict9]
@@ -53,8 +61,8 @@ def process_excel_file(excel_file_path):
         df_final.reset_index(drop=True, inplace=True)
         result_dfs.append(df_final.iloc[0, :])
 
-    # Concatenating all DataFrames in the result list
-    final_df = pd.concat(result_dfs, axis=1, ignore_index=True)
+    # Concatenating all DataFrames in the result list with a new index
+    final_df = pd.concat(result_dfs, axis=1, ignore_index=True).T
 
     return final_df
 
