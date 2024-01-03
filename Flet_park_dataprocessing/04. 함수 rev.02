@@ -74,4 +74,5 @@ def process_excel_file(excel_file_path):
 # Example Usage:
 excel_file_path = 'excel_edit.xlsx'
 result_df = process_excel_file(excel_file_path)
-print(result_df)
+result_df.columns = ["계약번호","차명","대리점","주행거리","불량내용","생산번호","상호","출하일","부위","차대번호","성명","발생일","불량종류","결함내용"]
+result_df
