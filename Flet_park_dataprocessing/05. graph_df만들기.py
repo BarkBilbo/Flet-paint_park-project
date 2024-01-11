@@ -28,6 +28,11 @@ graph_df['환입_도장'] = graph_df[result_df['불량종류'] == '도장'].grou
 # 도장 결함 비율 계산
 graph_df['도장_결함비율'] = graph_df['환입_도장'] / graph_df['환입_전체'] * 100
 
+# year, month 오름차순 정렬
+graph_df = graph_df.sort_values(['month'], ascending = True)
+graph_df = graph_df.sort_values(['year'], ascending = True)
+
+
 # graph_df에서 중복된 행 제거
 graph_df.drop_duplicates(inplace=True)
 
