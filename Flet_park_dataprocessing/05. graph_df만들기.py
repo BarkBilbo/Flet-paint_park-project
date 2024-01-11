@@ -28,6 +28,33 @@ graph_df['환입_도장'] = graph_df[result_df['불량종류'] == '도장'].grou
 # 도장 결함 비율 계산
 graph_df['도장_결함비율'] = graph_df['환입_도장'] / graph_df['환입_전체'] * 100
 
+
+
+# MV_전체결함 / KA4_전체결함 / RJ_전체결함 칼럼 추가
+graph_df['MV_전체결함'] = (result_df['차명'] == 'EV9').sum()
+graph_df['KA4_전체결함'] = (result_df['차명'] == '카니발').sum()
+graph_df['RJ_전체결함'] = (result_df['차명'] == 'K9').sum()
+
+# MV_도장결함 / KA4_도장결함 / RJ_도장결함 칼럼 추가
+graph_df['MV_도장결함'] = ((result_df['차명'] == 'EV9') & (result_df['불량종류'] == '도장')).sum()
+graph_df['KA4_도장결함'] = ((result_df['차명'] == '카니발') & (result_df['불량종류'] == '도장')).sum()
+graph_df['RJ_도장결함'] = ((result_df['차명'] == 'K9') & (result_df['불량종류'] == '도장')).sum()
+
+# 도장결함비율 칼럼 추가                 ############################################## 칼럼 내 값 %로 표시하기
+graph_df['도장결함비율'] = (graph_df['MV_도장결함']+graph_df['KA4_도장결함']+graph_df['RJ_도장결함'])/(graph_df['MV_전체결함']+graph_df['KA4_전체결함']+graph_df['RJ_전체결함'])*100
+graph_df['MV_도장결함비율'] = (graph_df['MV_도장결함'])/(graph_df['MV_전체결함'])*100
+graph_df['KA4_도장결함비율'] = (graph_df['KA4_도장결함'])/(graph_df['KA4_전체결함'])*100
+graph_df['RJ_도장결함비율'] = (graph_df['RJ_도장결함'])/(graph_df['RJ_전체결함'])*100
+
+
+
+
+
+
+
+
+
+
 # year, month 오름차순 정렬
 graph_df = graph_df.sort_values(['month'], ascending = True)
 graph_df = graph_df.sort_values(['year'], ascending = True)
