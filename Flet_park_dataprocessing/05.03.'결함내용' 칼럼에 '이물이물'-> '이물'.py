@@ -67,7 +67,7 @@ def process_multiple_excel_files(file_paths):
 
     return final_result_df
 
-file_paths = ['excel_edit.xlsx', '품질문제 기타환입 24년 1월 1차_덕평(15건).xlsx', '품질문제 기타환입 23년 10월 3차_경산(18건).xlsx']
+file_paths = ['excel_edit.xlsx', '품질문제 기타환입 24년 1월 1차_덕평(15건).xlsx', '품질문제 기타환입 23년 10월 3차_경산(18건).xlsx', '품질문제 기타환입 23년 8월 4차_광명(5건).xlsx', '품질문제 기타환입 24년 1월 2차_광명(5건).xlsx', '품질문제 기타환입 23년 9월 4차_광명(3건).xlsx' ]
 result_df = process_multiple_excel_files(file_paths)
 result_df.columns = ["계약번호", "차명", "대리점", "주행거리", "불량내용", "생산번호", "상호", "출하일", "부위", "차대번호", "성명", "발생일", "불량종류", "도장결함"]
 
